@@ -1,0 +1,34 @@
+/* #main-container-hightlights {
+   height:;
+} */
+
+.container-item-hightlight {
+   background-color: #1e213a;
+   color: white;
+}
+
+#h1-hightlights {
+   color: white;
+   font-size: 1.5rem;
+   font-weight: 700;
+   align-self: flex-start;
+}
+
+.p-item-hightlights {
+   font-size: 64px;
+   font-weight: 700;
+}
+
+.p-item-hightlights > span {
+   font-size: 2.5rem;
+   font-weight: 500;
+}
+
+#div-icon-location-hightlights {
+   color: #fff;
+   background-color: #616475;
+   border-radius: 50%;
+   width: 2rem;
+   height: 2rem;
+   transform: rotate(-190deg);
+}

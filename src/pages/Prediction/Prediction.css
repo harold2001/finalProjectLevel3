@@ -1,0 +1,19 @@
+/* #main-container-prediction {
+   height: 90vh;
+} */
+
+.each-prediction {
+   background-color: #1e213a;
+   color: white;
+   height: 11.1rem;
+   width: 7.5rem;
+}
+
+.each-div-prediction-image {
+   width: 100%;
+}
+
+.each-prediction-image {
+   width: 60%;
+   height: 100%;
+}
