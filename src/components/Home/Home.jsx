@@ -4,7 +4,7 @@ import { WiDayRain } from "react-icons/wi";
 import { MdLocationOn } from "react-icons/md";
 import { BsDot } from "react-icons/bs";
 
-export default function Home({ temperature, typeWeather, cityName }) {
+export default function Home({ children, temperature, typeWeather, cityName }) {
 
   function GetImage() {
     return (
@@ -14,11 +14,17 @@ export default function Home({ temperature, typeWeather, cityName }) {
     )
   }
 
+  const setNavbar = () => {
+    const navBar = document.getElementById("main-container-navbar");
+    navBar.classList.add("active")
+  }
+
   return (
     // <div id="background">
-      <div id="main-container-home" className="d-flex flex-column gap-4 p-3 col-12 col-xl-4 justify-content-xl-around align-items-xl-center gap-xl-5 p-xl-4">
+      <div id="main-container-home" className="d-flex flex-column gap-4 p-3 col-12 col-xl-4 justify-content-xl-around align-items-xl-center gap-xl-5 p-xl-4 position-relative">
+        {children}
         <div className="d-flex justify-content-between justify-content-xl-between col-xl-12 position-relative z-3" >
-          <button className="btn btn-secondary">Search for places</button>
+          <button className="btn btn-secondary rounded-0" onClick={setNavbar}>Search for places</button>
           <button className="btn btn-secondary">Ic</button>
         </div>
 

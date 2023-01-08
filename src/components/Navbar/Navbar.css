@@ -1,0 +1,35 @@
+#main-container-navbar {
+   display: none;
+   transition-property: display, position, top, bottom, right, left, background-color;
+   transition-duration: 4s;
+}
+
+#main-container-navbar.active {
+   display: block;
+   background-color: #1E213A;
+   position: absolute;
+   z-index: 50;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   transition-property: display, position, top, bottom, right, left, background-color;
+   transition-duration: 4s;
+}
+
+.button-list-navbar {
+   color: white;
+   border: 1px solid transparent;
+}
+
+.span-icon-arrow {
+   color: transparent;
+}
+
+.button-list-navbar:hover {
+   border: 1px solid #616475 !important;
+}
+
+.button-list-navbar:hover .span-icon-arrow{
+   color: #616475;
+}

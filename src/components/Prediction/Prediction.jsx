@@ -69,7 +69,7 @@ export default function Prediction({ nameCity, keyApi }) {
    const AllPredictions = () => {
       return (
          <Fragment>
-            {datos.map((obj) => {
+            {datos.map((obj) => {   
                return (
                   <div key={uuid()} className="each-prediction d-flex flex-column align-items-center justify-content-around px-3 py-2">
                      <p className="m-0">{obj.fecha}</p>
