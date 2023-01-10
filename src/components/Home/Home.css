@@ -49,3 +49,31 @@
   font-weight: 600;
   font-size: 2.5rem;
 }
+
+@media screen and (min-width: 992px) {
+  #h1-temperature-home {
+    font-size: 6rem;
+  }
+
+  #h1-temperature-home > span {
+    font-size: 3.3rem;
+  }
+
+  #h4-temperature-home {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #h1-temperature-home {
+    font-size: 7.5rem;
+  }
+
+  #h1-temperature-home > span {
+    font-size: 4rem;
+  }
+
+  #h4-temperature-home {
+    font-size: 2.5rem;
+  }
+}

@@ -4,7 +4,7 @@ import { FaLocationArrow } from "react-icons/fa"
 
 function ItemHightlight({ paddingBottom = "4", category, number, unit, children }) {
   return (
-    <div className={`container-item-hightlight col-12 d-flex flex-column justify-content-center align-items-center pt-3 pb-${paddingBottom} mt-4 mt-xl-0 col-xl-5`}>
+    <div className={`container-item-hightlight col-12 d-flex flex-column justify-content-center align-items-center pt-3 pb-${paddingBottom} mt-4 mt-xl-0 col-xl-5 col-lg-5 mt-lg-0`}>
       <p className="m-0">{category}</p>
       <p className="p-item-hightlights mb-1">{number}<span>{unit}</span></p>
       {children}
@@ -48,10 +48,10 @@ function IconTextWindStatus() {
 export default function Hightlights({ speedWind, humidityData, visibilityData, pressureData }) {
   return (
     <div id="main-container-hightlights">
-      <div className="d-flex flex-column justify-content-center align-items-center pb-5 flex-wrap flex-xl-row gap-xl-5 p-xl-0 px-xxl-5">
-        <div className="col-10">
-          <h1 id="h1-hightlights" className="m-0">Today's Hightlights</h1>
-        </div>
+      <div className="col-10">
+      </div>
+        <h1 id="h1-hightlights" className="m-0 mb-lg-3">Today's Hightlights</h1>
+      <div className="d-flex flex-column justify-content-center align-items-center pb-5 flex-wrap flex-lg-row gap-lg-3 pb-lg-0 flex-xl-row gap-xl-5 p-xl-0 px-xxl-5">
         <ItemHightlight category={"Wind status"} number={speedWind} unit={"mph"}>
           <IconTextWindStatus />
         </ItemHightlight>

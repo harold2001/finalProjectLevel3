@@ -15,7 +15,7 @@
 }
 
 .p-item-hightlights {
-   font-size: 64px;
+   font-size: 4rem;
    font-weight: 700;
 }
 
@@ -31,4 +31,41 @@
    width: 2rem;
    height: 2rem;
    transform: rotate(-190deg);
+}
+
+@media screen and (min-width:992px) {
+   #h1-hightlights {
+      font-size: 1.4rem;
+      padding-left: 2.5rem;
+   }
+
+   .p-item-hightlights {
+      font-size: 3rem;
+   }
+
+   #div-icon-location-hightlights {
+      height: 1.8rem;
+      width: 1.8rem;
+   }
+}
+
+@media screen and (min-width:1200px) {
+   #h1-hightlights {
+      font-size: 1.5rem;
+   }
+
+   .p-item-hightlights {
+      font-size: 4rem;
+   }
+
+   #div-icon-location-hightlights {
+      height: 2rem;
+      width: 2rem;
+   }
+}
+
+@media screen and (min-width:1400px) {
+   #h1-hightlights {
+      padding-left: 5.5rem;
+   }
 }

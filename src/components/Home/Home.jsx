@@ -1,38 +1,31 @@
 import "./Home.css"
-import React, { Fragment, useState } from 'react';
-import { WiDayRain } from "react-icons/wi";
 import { MdLocationOn } from "react-icons/md";
 import { BsDot } from "react-icons/bs";
 import { BiCurrentLocation } from "react-icons/bi";
+import SpinnerLoadingHome from "../SpinnerLoadingHome/SpinnerLoadingHome";
 
-export default function Home({ children, temperature, typeWeather, cityName, getLocation }) {
+export default function Home({ children, temperature, typeWeather, cityName, getLocation, imagen }) {
 
-  function GetImage() {
-    return (
-      <Fragment>
-        <img src={`src/images/${typeWeather}.png`} className="posiiton-relative z-3 ps-xxl-4" />
-      </Fragment>
-    )
-  }
 
   const setNavbar = () => {
     const navBar = document.getElementById("main-container-navbar");
     navBar.classList.add("active")
   }
-  
 
   return (
-    // <div id="background">
-    <div id="main-container-home" className="d-flex flex-column gap-4 p-3 col-12 col-xl-4 justify-content-xl-around align-items-xl-center gap-xl-5 p-xl-4 position-relative">
+    <div id="main-container-home" className="d-flex flex-column gap-4 p-3 col-12 justify-content-md-around px-md-5 py-md-2 col-lg-4 col-xl-4 justify-content-xl-between align-items-xl-center gap-xl-5 p-xl-4 position-relative">
       {children}
       <div className="d-flex justify-content-between justify-content-xl-between col-xl-12 position-relative z-3" >
         <button className="btn btn-secondary rounded-0" onClick={setNavbar}>Search for places</button>
         <button className="btn btn-secondary d-flex justify-content-center align-items-center p-2" type="submit" style={{ width: "38px", height: "100%", borderRadius: "50%" }} onClick={() => navigator.geolocation.getCurrentPosition(getLocation, console.log())}><BiCurrentLocation style={{ width: "100%", height: "100%" }} /></button>
       </div>
 
-      <div id="div-icon-home" className="col-12 text-center d-flex ps-4 ps-xl-2 position-relative z-3 ps-xxl-5">
-        <GetImage />
-      </div>
+      {imagen ?
+        <div id="div-icon-home" className="col-12 text-center d-flex justify-content-center pe-md-5 pe-lg-4 pe-xl-5 position-relative z-3">
+          <img src={imagen} className="position-relative z-3" />
+        </div>
+        :
+        <SpinnerLoadingHome />}
 
       <div className="d-flex flex-column gap-4 position-relative z-3">
         <div className="text-white text-center d-flex flex-column gap-2">
@@ -49,11 +42,8 @@ export default function Home({ children, temperature, typeWeather, cityName, get
             <MdLocationOn /><span>{cityName}</span>
           </div>
         </div>
-
       </div>
-
     </div>
-    // </div>
 
   )
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import "./Navbar.css";
 import { IoIosArrowForward } from "react-icons/io";
 import { CgClose } from "react-icons/cg";
-import App from '../../App';
 import { AiOutlineSearch } from "react-icons/ai";
 
 
@@ -17,7 +16,7 @@ export default function Navbar({ functionForm }) {
     return (
       <div className="div-lista-navbar">
         <form onSubmit={functionForm}>
-          <input type="text" name="city" value={pais} style={{display:"none"}} disabled/>
+          <input type="text" name="city" value={pais} style={{ display: "none" }} disabled />
           <button type="submit" className="button-list-navbar col-12 px-3 py-4 d-flex justify-content-between align-items-center bg-transparent">
             <span>{pais}</span><span className="span-icon-arrow fs-5"><IoIosArrowForward /></span>
           </button>

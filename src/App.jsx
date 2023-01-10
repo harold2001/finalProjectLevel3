@@ -7,7 +7,19 @@ import Hightlights from './components/Hightlights/Hightlights';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Prediction from "./components/Prediction/Prediction";
-import SpinnerLoading from "./components/SpinnerLoading/SpinnerLoading"
+import SpinnerLoading from "./components/SpinnerLoading/SpinnerLoading";
+import Clouds from "./assets/Clouds.png";
+import Clear from "./assets/Clear.png";
+import Drizzle from "./assets/Drizzle.png";
+import Fog from "./assets/Fog.png";
+import Hail from "./assets/Hail.png";
+import LightCloud from "./assets/LightCloud.png";
+import Mist from "./assets/Mist.png";
+import Rain from "./assets/Rain.png";
+import Shower from "./assets/Shower.png";
+import Sleet from "./assets/Sleet.png";
+import Snow from "./assets/Snow.png";
+import Thunderstorm from "./assets/Thunderstorm.png";
 
 const removeNavBar = () => {
   const navBar = document.getElementById("main-container-navbar");
@@ -69,17 +81,43 @@ export default function App() {
       console.log(error)
     }
   }
-  // useEffect(() => {
-  //   getDataHome();
-  // }, [])
+
+  const [image, setImage] = useState();
+  useEffect(() => {
+    if (finalData.weather === "Clouds") {
+      setImage(Clouds);
+    } else if (finalData.weather === "Clear") {
+      setImage(Clear);
+    } else if (finalData.weather === "Drizzle") {
+      setImage(Drizzle)
+    } else if (finalData.weather === "Fog") {
+      setImage(Fog)
+    } else if (finalData.weather === "Hail") {
+      setImage(Hail)
+    } else if (finalData.weather === "LightCloud") {
+      setImage(LightCloud)
+    } else if (finalData.weather === "Mist") {
+      setImage(Mist)
+    } else if (finalData.weather === "Rain") {
+      setImage(Rain)
+    } else if (finalData.weather === "Shower") {
+      setImage(Shower)
+    } else if (finalData.weather === "Sleet") {
+      setImage(Sleet)
+    } else if (finalData.weather === "Snow") {
+      setImage(Snow)
+    } else if (finalData.weather === "Thunderstorm") {
+      setImage(Thunderstorm)
+    }
+  }, [finalData])
 
   return (
-    <div className="App d-xl-flex" style={{ width: "100vw" }}>
-      <Home temperature={finalData.temp} typeWeather={finalData.weather} cityName={finalData.city} getLocation={getCurrentLocation}>
+    <div className="App d-lg-flex" style={{ width: "100vw" }}>
+      <Home temperature={finalData.temp} typeWeather={finalData.weather} cityName={finalData.city} getLocation={getCurrentLocation} imagen={image}>
         <Navbar functionForm={getDataHome}></Navbar>
       </Home>
       {nameCity!== undefined ?
-          <div style={{ backgroundColor: "#100e1d" }} className="p-4 d-flex flex-column gap-4 d-xl-flex flex-xl-column col-xl-8 justify-content-xl-center align-items-xl-center position-relative z-3 p-xl-5">
+          <div style={{ backgroundColor: "#100e1d" }} className="p-4 d-flex flex-column gap-4 p-lg-4 d-xl-flex flex-xl-column col justify-content-xl-center align-items-xl-center position-relative z-3 p-xl-5">
             <Prediction nameCity={nameCity} keyApi={apiKey} />
             <Hightlights speedWind={finalData.speed} humidityData={finalData.humidity} visibilityData={finalData.visibility} pressureData={finalData.pressure} />
           </div>
