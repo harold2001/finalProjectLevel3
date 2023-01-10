@@ -46,4 +46,30 @@
 
       </HashRouter> */}
 
-      // <span className="d-flex align-items-center justify-content-center fs-5"><IoIosArrowForward /></span>
+// <span className="d-flex align-items-center justify-content-center fs-5"><IoIosArrowForward /></span>
+
+
+//   const AllPredictions = () => {
+//     return (
+//        <Fragment>
+//           {datos.map((obj) => {
+//              return (
+//                 <div key={uuid()} className="each-prediction d-flex flex-column align-items-center justify-content-around px-3 py-2">
+//                    <p className="m-0">{obj.fecha}</p>
+//                    <div className="each-div-prediction-image d-flex justify-content-center">
+//                       <img src={`src/images/${obj.imagen}.png`} className="each-prediction-image posiiton-relative z-3" />
+//                    </div>
+//                    <div className="d-flex justify-content-between col-12">
+//                       <span>{obj.tempMaxi}</span><span style={{ color: "#A09FB1" }}>{obj.tempMini}</span>
+//                    </div>
+//                 </div>
+//              )
+//           })}
+//        </Fragment>
+//     )
+//  }
+
+
+
+
+

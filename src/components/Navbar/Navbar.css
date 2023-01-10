@@ -1,35 +1,33 @@
 #main-container-navbar {
-   display: none;
-   transition-property: display, position, top, bottom, right, left, background-color;
-   transition-duration: 4s;
+  z-index: 50;
+  max-width: 0px;
+  overflow: hidden;
+  position: absolute;
+  background-color: #1e213a;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 1s;
 }
 
 #main-container-navbar.active {
-   display: block;
-   background-color: #1E213A;
-   position: absolute;
-   z-index: 50;
-   top: 0;
-   bottom: 0;
-   right: 0;
-   left: 0;
-   transition-property: display, position, top, bottom, right, left, background-color;
-   transition-duration: 4s;
+  max-width: 100%;
 }
 
 .button-list-navbar {
-   color: white;
-   border: 1px solid transparent;
+  color: white;
+  border: 1px solid transparent;
 }
 
 .span-icon-arrow {
-   color: transparent;
+  color: transparent;
 }
 
 .button-list-navbar:hover {
-   border: 1px solid #616475 !important;
+  border: 1px solid #616475 !important;
 }
 
-.button-list-navbar:hover .span-icon-arrow{
-   color: #616475;
+.button-list-navbar:hover .span-icon-arrow {
+  color: #616475;
 }

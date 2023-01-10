@@ -2,7 +2,7 @@ import React from 'react'
 import "./Hightlights.css"
 import { FaLocationArrow } from "react-icons/fa"
 
-function ItemHightlight({ paddingBottom="4", category, number, unit, children }) {
+function ItemHightlight({ paddingBottom = "4", category, number, unit, children }) {
   return (
     <div className={`container-item-hightlight col-12 d-flex flex-column justify-content-center align-items-center pt-3 pb-${paddingBottom} mt-4 mt-xl-0 col-xl-5`}>
       <p className="m-0">{category}</p>
@@ -17,19 +17,19 @@ function ProgressBar({ percentage }) {
     <div className="col-10 d-flex flex-column align-items-center">
       <div className="col-12 d-flex justify-content-between">
         <div>
-          <span style={{fontSize:"12px"}}>0</span>
+          <span style={{ fontSize: "12px" }}>0</span>
         </div>
         <div>
-          <span style={{fontSize:"12px"}}>50</span>
+          <span style={{ fontSize: "12px" }}>50</span>
         </div>
         <div>
-          <span style={{fontSize:"12px"}}>100</span>
+          <span style={{ fontSize: "12px" }}>100</span>
         </div>
       </div>
       <div className="progress col-12 mb-0 position-relative" role="progressbar" aria-label="Basic example" style={{ height: ".5rem" }}>
         <div className="progress-bar" style={{ width: `${percentage}%` }}></div>
       </div>
-      <div className="col-12 text-end"><span style={{fontSize:"12px"}}>%</span></div>
+      <div className="col-12 text-end"><span style={{ fontSize: "12px" }}>%</span></div>
     </div>
   )
 }
@@ -58,7 +58,7 @@ export default function Hightlights({ speedWind, humidityData, visibilityData, p
         <ItemHightlight category={"Humidity"} number={humidityData} unit={"%"} paddingBottom={"1"}>
           <ProgressBar percentage={humidityData} />
         </ItemHightlight>
-        <ItemHightlight category={"Visibility"} number={(visibilityData * 0.000621371).toFixed(1)} unit={" miles"} />
+        <ItemHightlight category={"Visibility"} number={isNaN((visibilityData * 0.000621371).toFixed(1)) ? 0 : (visibilityData * 0.000621371).toFixed(1)} unit={" miles"} />
         <ItemHightlight category={"Air Pressure"} number={pressureData} unit={" mb"} />
       </div>
 
